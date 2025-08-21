@@ -13,26 +13,22 @@ class Coche(private var _marca: String = "Ford", private var _modelo: Int = 2020
         set(value) { _modelo = value }
 }
 
-// 1) Interfaz
 interface Perimetrable {
     fun calcularPerimetro(): Double
 }
 
-// 2) Circulo implementa Perimetrable
 class Circulo(private val radio: Double) : Perimetrable {
     override fun calcularPerimetro(): Double {
         return 2 * Math.PI * radio
     }
 }
 
-// 3) Rectangulo implementa Perimetrable
 class Rectangulo(private val ancho: Double, private val alto: Double) : Perimetrable {
     override fun calcularPerimetro(): Double {
         return 2 * (ancho + alto)
     }
 }
 
-// 4) Mostrar perímetros de una lista de figuras
 fun mostrarPerimetros() {
     val figuras: List<Perimetrable> = listOf(
         Circulo(5.0),
